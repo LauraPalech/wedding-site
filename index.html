@@ -12,7 +12,7 @@
     :root {
       --bg:        #eae6dc;
       --bg-alt:    #e4dfd3;
-      --bg-dark:   #302820;
+      --bg-dark:   #2a1628;
       --ink:       #2a2218;
       --ink-mid:   #4a4035;
       --ink-soft:  #7a7060;
@@ -102,18 +102,21 @@
       opacity: 0.7;
     }
 
-    .hero-display {
+        .hero-display {
       font-family: 'Playfair Display', serif;
       font-weight: 400;
-      font-size: clamp(5.5rem, 13vw, 11rem);
-      line-height: 1.0;
-      color: var(--ink);
-      letter-spacing: -0.01em;
+      font-style: italic;
+      font-size: clamp(3.2rem, 7vw, 6rem);
+      line-height: 1.15;
+      color: var(--wine);
+      letter-spacing: 0.02em;
       margin-bottom: 0;
     }
-    .hero-display .line-wine {
-      color: var(--wine);
-      display: block;
+    .hero-display .amp-sign {
+      font-style: italic;
+      font-size: 0.85em;
+      color: var(--wine-mid);
+      margin: 0 0.15em;
     }
 
     .hero-byline {
@@ -141,6 +144,7 @@
       line-height: 1.8;
       letter-spacing: 0.02em;
       text-align: center;
+      margin-top: 48px;
     }
 
     .hero-actions {
@@ -151,7 +155,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 0.58rem; font-weight: 500;
       letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--bg); background: var(--ink);
+      color: var(--bg); background: #5a6048;
       border: none; padding: 15px 32px;
       text-decoration: none; transition: opacity 0.2s;
       cursor: pointer;
@@ -182,7 +186,7 @@
       font-family: 'Playfair Display', serif;
       font-weight: 400;
       font-size: clamp(2rem, 4vw, 3.2rem);
-      color: var(--ink);
+      color: var(--wine);
       letter-spacing: 0.02em;
     }
     .section-head .rule { margin-top: 24px; max-width: 40px; }
@@ -499,8 +503,7 @@
     </svg>
 
     <h1 class="hero-display">
-      María
-      <span class="line-wine">· Laura</span>
+      María <span class="amp-sign">&amp;</span> Laura
     </h1>
 
     <p class="hero-venue">
@@ -532,7 +535,7 @@
         </div>
         <div class="event-content">
           <h3 class="event-title">El Ritual</h3>
-          <p class="event-desc">Este momento empieza con una ceremonia para consolidar nuestra unión. Abriremos las puertas de 5:45 a 6:00 p.m. y permanecerán cerradas durante el ritual. Contamos con tu puntualidad para celebrar juntos.</p>
+          <p class="event-desc">Este momento empieza con una ceremonia donde unimos nuestras vidas. Abriremos las puertas de 5:45 a 6:00 p.m. y permanecerán cerradas durante el ritual. Contamos con tu puntualidad para celebrar juntos.</p>
           <span class="event-loc">Ruta Vaga, Carrera 33 · El Poblado, Medellín</span>
           <div class="event-links">
             <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=El+Ritual+%E2%80%94+Mar%C3%ADa+%26+Laura&dates=20260815T224500Z/20260816T000000Z&details=Ceremonia+de+uni%C3%B3n&location=Ruta+Vaga,+Carrera+33,+El+Poblado,+Medell%C3%ADn" target="_blank" class="link-inline">Añadir al calendario</a>
@@ -742,7 +745,7 @@
 
         <p id="rsvp-error" style="display:none; color:#a03030; font-family:'EB Garamond',serif; font-style:italic; font-size:0.95rem; margin-top:16px;"></p>
 
-        <button onclick="enviarRSVP()" class="btn-dark" style="margin-top:32px; width:100%; background:var(--ink);">Confirmar →</button>
+        <button onclick="enviarRSVP()" class="btn-dark" style="margin-top:32px; width:100%; background:#5a6048;">Confirmar →</button>
       </div>
 
       <div id="rsvp-success" style="display:none; text-align:center; padding:40px 0;">
