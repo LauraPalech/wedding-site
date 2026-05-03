@@ -102,7 +102,7 @@
       opacity: 0.7;
     }
 
-        .hero-display {
+    .hero-display {
       font-family: 'Playfair Display', serif;
       font-weight: 400;
       font-style: italic;
@@ -702,7 +702,8 @@
     <div class="rsvp-card">
       <div class="rsvp-card-header">
         <span class="caps" style="color:var(--ink-soft);">Confirmación &nbsp;·&nbsp; No. III</span>
-        <span class="caps" style="color:var(--ink-soft);">Antes del 15 &nbsp;·&nbsp; VII &nbsp;·&nbsp; 2026</span>
+        <!-- FIX: fecha límite corregida a 1 de junio -->
+        <span class="caps" style="color:var(--ink-soft);">Antes del 1 &nbsp;·&nbsp; VI &nbsp;·&nbsp; 2026</span>
       </div>
       <div class="rule" style="background:var(--hairline); margin-bottom:40px;"></div>
 
@@ -863,6 +864,8 @@
     const asistencia = document.querySelector('input[name="asistencia"]:checked');
     const nombre = document.getElementById('rsvp-nombre').value.trim();
     const apellido = document.getElementById('rsvp-apellido').value.trim();
+    // FIX: leer el campo alergia correctamente
+    const alergia = document.getElementById('rsvp-alergia').value || 'Ninguna';
     const mensaje = document.getElementById('rsvp-mensaje').value.trim();
     const errorEl = document.getElementById('rsvp-error');
 
@@ -882,11 +885,13 @@
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
+        // FIX: incluir alergia en el body que se envía al Sheet
         body: JSON.stringify({
           timestamp: new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota' }),
           nombre,
           apellido,
           asistencia: asistencia.value,
+          alergia,
           mensaje
         })
       });
